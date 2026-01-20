@@ -7,7 +7,7 @@ body {
 
 .site-header {
     position: relative;
-    font-family: 'Libre Baskerville', serif; /* Plantin-like */
+    font-family: 'Libre Baskerville', serif;
     text-transform: none;
     width: 100vw;
     height: 100vh;
@@ -19,7 +19,7 @@ body {
     position: absolute;
     bottom: 2rem;
     left: 2rem;
-    width: 100px; /* adjust size as needed */
+    width: 100px; /* adjust size */
     height: auto;
 }
 
