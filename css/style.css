@@ -1,9 +1,9 @@
 .site-header {
     font-family: 'Lexend Peta', sans-serif;
     font-variant: small-caps;
-    text-align: center;
-    font-size: 2em;
-    padding: 2rem 0;
+    text-align: left;       /* aligns the text to the left */
+    font-size: 1.2em;       /* makes it smaller */
+    padding: 1rem;          /* smaller padding around it */
 }
 
 
