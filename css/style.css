@@ -29,8 +29,8 @@ body {
 /* Text block near top-left */
 .site-header .text-block {
     position: absolute;
-    left: 2rem;
-    top: 2rem;       /* distance from top */
+    left: 1rem;
+    top: 1rem;       /* distance from top */
     transform: none; /* no vertical centering */
 }
 
