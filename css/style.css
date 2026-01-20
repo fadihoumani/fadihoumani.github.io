@@ -36,21 +36,21 @@ body {
 
 /* Name line */
 .site-header .name {
-    font-size: 2em;
+    font-size: 1.2em;
     letter-spacing: 0.2em;
     font-weight: bold;
 }
 
 /* Role line */
 .site-header .role {
-    font-size: 1em;
+    font-size: 0.6em;
     letter-spacing: 0.05em;
     margin-top: 0.2em;
 }
 
 /* Email line */
 .site-header .email {
-    font-size: 1em;
+    font-size: 0.6em;
     letter-spacing: 0.05em;
     margin-top: 0.2em;
 }
