@@ -1,3 +1,4 @@
+/* Reset body and basic font */
 body {
     margin: 0;
     font-family: sans-serif;
@@ -5,9 +6,10 @@ body {
     color: #111;
 }
 
+/* Header takes full screen */
 .site-header {
     position: relative;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Libre Baskerville', serif; /* Plantin-like */
     text-transform: none;
     width: 100vw;
     height: 100vh;
@@ -20,7 +22,7 @@ body {
     position: absolute;
     bottom: 2rem;
     left: 2rem;
-    width: 100px; /* adjust size */
+    width: 100px; /* adjust size as needed */
     height: auto;
 }
 
@@ -28,22 +30,25 @@ body {
 .site-header .text-block {
     position: absolute;
     left: 2rem;
-    top: 2rem;
-    transform: none;
+    top: 2rem;       /* distance from top */
+    transform: none; /* no vertical centering */
 }
 
+/* Name line */
 .site-header .name {
     font-size: 2em;
     letter-spacing: 0.2em;
     font-weight: bold;
 }
 
+/* Role line */
 .site-header .role {
     font-size: 1.2em;
     letter-spacing: 0.05em;
     margin-top: 0.2em;
 }
 
+/* Email line */
 .site-header .email {
     font-size: 1em;
     letter-spacing: 0.05em;
