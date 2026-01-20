@@ -20,8 +20,8 @@ body {
 /* Bottom-left logo */
 .site-header .bottom-logo {
     position: absolute;
-    bottom: 1rem;
-    left: 1rem;
+    bottom: 0rem;
+    left: 0rem;
     width: 350px; /* adjust size as needed */
     height: auto;
 }
