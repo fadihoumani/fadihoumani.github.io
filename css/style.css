@@ -68,4 +68,7 @@ body {
     display: inline-block;
     width: 0.4em;
 }
+.text-block {
+    white-space: nowrap;
+}
 
