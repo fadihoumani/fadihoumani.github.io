@@ -28,17 +28,24 @@ main {
 
 /* ---------- TEXT ---------- */
 .name {
-  font-size: 48px;
-  margin-bottom: 24px;
+  font-size: 10px;
+  margin-bottom: 6px;
 }
 
+.email {
+  font-size: 10px;
+  margin-bottom: 28px;
+}
+
+/* ---------- CATEGORIES ---------- */
 .categories a {
   display: block;
-  font-size: 48px;
+  font-size: 10px;
   text-decoration: none;
   color: black;
   margin-bottom: 12px;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 /* ---------- LETTER CONTROL ---------- */
@@ -62,20 +69,20 @@ main {
   margin-top: 48px;
 }
 
-.section img {
-  width: 100%;
-  border: 1px solid black;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
+.section img {
+  width: 100%;
+  border: 1px solid black;
+}
+
 /* ---------- TARGET LOGIC ---------- */
 
-/* GRAPHIC DESIGN ACTIVE */
+/* GRAPHIC ACTIVE */
 #graphic:target ~ main .graphic {
   color: red;
 }
@@ -108,21 +115,22 @@ main {
   position: fixed;
   bottom: 40px;
   left: 40px;
-  width: 140px;
-  border: 1.5px solid black;
+  width: 200px;
+  border: 1px solid black;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Invisible anchors controlling state -->
+<!-- invisible anchors controlling state -->
 <div id="graphic"></div>
 <div id="writing"></div>
 
 <main>
 
   <div class="name">fadi houmani</div>
+  <div class="email">houmanifadi@gmail.com</div>
 
   <nav class="categories">
 
@@ -140,7 +148,7 @@ main {
 
   </nav>
 
-  <!-- GRAPHIC DESIGN CONTENT -->
+  <!-- GRAPHIC CONTENT -->
   <section class="section graphic-section">
     <div class="grid">
       <img src="images/gd1.jpg">
