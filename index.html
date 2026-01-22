@@ -4,8 +4,119 @@
 <meta charset="UTF-8">
 <title>Fadi Houmani</title>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<style>
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- BASE ---------- */
+body {
+    font-family: 'Libre Baskerville', serif;
+    background: white;
+    color: black;
+    min-height: 100vh;
+}
+
+main {
+    padding: 40px;
+}
+
+/* ---------- HEADER TEXT ---------- */
+.name, .email {
+    font-size: 20px;
+}
+
+.email {
+    margin-bottom: 28px;
+}
+
+/* ---------- CATEGORIES ---------- */
+.categories a {
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 14px;
+    white-space: nowrap;
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+    display: none;
+    margin-top: 64px;
+}
+
+/* ---------- WRITING LIST ---------- */
+.writing-titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+.writing-titles a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+/* ---------- ACTIVE STATES ---------- */
+/* GRAPHIC */
+#graphic:target ~ main .graphic {
+    color: red;
+    letter-spacing: 0.32em;
+}
+#graphic:target ~ main .graphic-section {
+    display: block;
+}
+
+/* WRITING (parent) */
+#writing:target ~ main .writing,
+#writing-amber:target ~ main .writing,
+#writing-oceans:target ~ main .writing,
+#writing-merlin:target ~ main .writing,
+#writing-office:target ~ main .writing {
+    color: red;
+    letter-spacing: 0.32em;
+}
+
+#writing:target ~ main .writing-section,
+#writing-amber:target ~ main .writing-section,
+#writing-oceans:target ~ main .writing-section,
+#writing-merlin:target ~ main .writing-section,
+#writing-office:target ~ main .writing-section {
+    display: block;
+}
+
+/* INDIVIDUAL WRITING PIECES */
+#writing-amber:target ~ main .amber,
+#writing-oceans:target ~ main .oceans,
+#writing-merlin:target ~ main .merlin,
+#writing-office:target ~ main .office {
+    color: red;
+    letter-spacing: 0.6em;
+}
+
+/* ---------- LOGO ---------- */
+.bottom-logo {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    width: 200px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+/* Smooth scroll for logo click */
+html {
+    scroll-behavior: smooth;
+}
+</style>
 </head>
+
 <body>
 
 <!-- STATE ANCHORS -->
@@ -17,13 +128,9 @@
 <div id="writing-office"></div>
 
 <main>
-    <!-- HEADER TEXT BLOCK -->
-    <div class="text-block">
-        <div class="name">fadi houmani</div>
-        <div class="email">houmanifadi@gmail.com</div>
-    </div>
+    <div class="name">fadi houmani</div>
+    <div class="email">houmanifadi@gmail.com</div>
 
-    <!-- CATEGORY NAV -->
     <nav class="categories">
         <a href="#graphic" class="graphic">graphic design</a>
         <a href="#writing" class="writing">writing</a>
@@ -32,8 +139,8 @@
     <!-- GRAPHIC SECTION -->
     <section class="section graphic-section"></section>
 
-    <!-- WRITING LIST -->
-    <section class="section writing-section writing">
+    <!-- WRITING SECTION -->
+    <section class="section writing-section">
         <div class="writing-titles">
             <a href="#writing-amber" class="piece amber">tales of amber</a>
             <a href="#writing-oceans" class="piece oceans">all oceans break loose</a>
@@ -43,10 +150,10 @@
     </section>
 
     <!-- INDIVIDUAL TEXT PAGES -->
-    <section class="section amber-section amber"></section>
-    <section class="section oceans-section oceans"></section>
-    <section class="section merlin-section merlin"></section>
-
+    <section class="section amber-section"></section>
+    <section class="section oceans-section"></section>
+    <section class="section merlin-section"></section>
+    
     <!-- OFFICE SECTION -->
     <section class="section office-section office">
         <div class="ellipsis">(...)</div>
@@ -93,6 +200,7 @@
             The lights go yellow.<br>
             The lights go red.
         </p>
+
     </section>
 </main>
 
