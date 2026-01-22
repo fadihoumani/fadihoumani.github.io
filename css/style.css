@@ -1,4 +1,4 @@
-/* ---------- EXISTING CSS ---------- */
+/* ---------- ORIGINAL CSS (UNCHANGED) ---------- */
 /* Reset body and basic font */
 body {
     margin: 0;
@@ -25,8 +25,8 @@ body {
     left: 0.4rem;
     width: 300px;
     height: auto;
-    border: 1px solid black;   /* frame */
-    padding: 0.3rem;           /* space between image and frame */
+    border: 1px solid black;
+    padding: 0.3rem;
 }
 
 /* Text block near top-left */
@@ -34,7 +34,7 @@ body {
     position: absolute;
     left: 1rem;
     top: 1rem;
-    transform: none; /* no vertical centering */
+    transform: none;
 }
 
 .name {
@@ -65,6 +65,7 @@ body {
     display: inline-block;
     width: 0.4em;
 }
+
 .text-block {
     white-space: nowrap;
 }
@@ -95,7 +96,7 @@ body {
     font-style: italic;
 }
 
-/* ---------- ADDITIONAL EXISTING CSS ---------- */
+/* ---------- EXISTING HTML/CATEGORY CSS ---------- */
 * {
     margin: 0;
     padding: 0;
@@ -113,13 +114,8 @@ main {
     padding: 40px;
 }
 
-.name, .email {
-    font-size: 20px;
-}
-
-.email {
-    margin-bottom: 28px;
-}
+.name, .email { font-size: 20px; }
+.email { margin-bottom: 28px; }
 
 .categories a {
     display: block;
@@ -130,10 +126,7 @@ main {
     white-space: nowrap;
 }
 
-.section {
-    display: none;
-    margin-top: 64px;
-}
+.section { display: none; margin-top: 64px; }
 
 .writing-titles {
     display: flex;
@@ -179,7 +172,7 @@ main {
     position: fixed; /* stays visible */
     bottom: 40px;
     left: 40px;
-    width: 200px; /* adjust as you like */
+    width: 200px;
     height: auto;
     border: 1px solid black;
     padding: 0.3rem;
