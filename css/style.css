@@ -1,4 +1,7 @@
-/* ---------- ORIGINAL CSS (UNCHANGED) ---------- */
+/* -------------------------
+   ORIGINAL CSS – DO NOT TOUCH
+   ------------------------- */
+
 /* Reset body and basic font */
 body {
     margin: 0;
@@ -18,23 +21,13 @@ body {
     box-sizing: border-box;
 }
 
-/* Bottom-left logo */
-.site-header .bottom-logo {
-    position: absolute;
-    bottom: 0.4rem;
-    left: 0.4rem;
-    width: 300px;
-    height: auto;
-    border: 1px solid black;
-    padding: 0.3rem;
-}
-
 /* Text block near top-left */
-.site-header .text-block {
+.text-block {
     position: absolute;
     left: 1rem;
     top: 1rem;
     transform: none;
+    white-space: nowrap;
 }
 
 .name {
@@ -66,10 +59,6 @@ body {
     width: 0.4em;
 }
 
-.text-block {
-    white-space: nowrap;
-}
-
 /* ===============================
    WRITING – OFFICE TEXT LAYOUT
    =============================== */
@@ -85,13 +74,11 @@ body {
     margin-bottom: 22px;
 }
 
-/* centered (...) separators */
 .office-section .ellipsis {
     text-align: center;
     margin: 40px 0;
 }
 
-/* italic blocks */
 .office-section .italic {
     font-style: italic;
 }
@@ -141,10 +128,13 @@ main {
     font-size: 18px;
 }
 
-/* ACTIVE STATES */
+/* ---------- ACTIVE STATES ---------- */
+
+/* GRAPHIC */
 #graphic:target ~ main .graphic { color: red; letter-spacing: 0.32em; }
 #graphic:target ~ main .graphic-section { display: block; }
 
+/* WRITING PARENT */
 #writing:target ~ main .writing,
 #writing-amber:target ~ main .writing,
 #writing-oceans:target ~ main .writing,
@@ -157,16 +147,17 @@ main {
 #writing-merlin:target ~ main .writing-section,
 #writing-office:target ~ main .writing-section { display: block; }
 
+/* INDIVIDUAL WRITING PIECES */
 #writing-amber:target ~ main .amber,
 #writing-oceans:target ~ main .oceans,
 #writing-merlin:target ~ main .merlin,
 #writing-office:target ~ main .office { color: red; letter-spacing: 0.6em; }
 
-/* -------- SHOW OFFICE SECTION WHEN LINK CLICKED -------- */
+/* SHOW OFFICE SECTION */
 #writing-office:target ~ main .office-section { display: block; }
 
 /* ---------------------------
-   Added for fixed scroll-up logo
+   ADDED FOR FIXED SCROLL-UP LOGO
    --------------------------- */
 .bottom-logo {
     position: fixed; /* stays visible */
