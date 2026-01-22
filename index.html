@@ -7,14 +7,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- RESET ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ---------- BASE ---------- */
 body {
   font-family: 'Libre Baskerville', serif;
   background: white;
@@ -26,16 +24,12 @@ main {
   padding: 40px;
 }
 
-/* ---------- TEXT ---------- */
-.name {
-  font-size: 20px;
-  margin-bottom: 6px;
-}
-
+.name,
 .email {
   font-size: 20px;
-  margin-bottom: 28px;
 }
+
+.email { margin-bottom: 28px; }
 
 /* ---------- CATEGORIES ---------- */
 .categories a {
@@ -45,25 +39,18 @@ main {
   color: black;
   margin-bottom: 12px;
   white-space: nowrap;
-  cursor: pointer;
 }
 
 /* ---------- LETTER CONTROL ---------- */
-.categories span {
-  display: inline-block;
-}
+.categories span { display: inline-block; }
+.space { width: 0.6em; display: inline-block; }
 
-.space {
-  width: 0.6em;
-  display: inline-block;
-}
+.t-tight  { letter-spacing: -0.08em; }
+.t-normal { letter-spacing: 0em; }
+.t-wide   { letter-spacing: 0.14em; }
+.t-wider  { letter-spacing: 0.28em; }
 
-.t-tight   { letter-spacing: -0.08em; }
-.t-normal  { letter-spacing: 0em; }
-.t-wide    { letter-spacing: 0.14em; }
-.t-wider   { letter-spacing: 0.28em; }
-
-/* ---------- CONTENT ---------- */
+/* ---------- SECTIONS ---------- */
 .section {
   display: none;
   margin-top: 48px;
@@ -80,34 +67,47 @@ main {
   border: 1px solid black;
 }
 
-/* ---------- TARGET LOGIC ---------- */
-
-/* GRAPHIC ACTIVE */
-#graphic:target ~ main .graphic {
-  color: red;
+/* ---------- WRITING TITLES ---------- */
+.writing-titles {
+  margin-bottom: 40px;
 }
 
-#graphic:target ~ main .graphic .t-tight   { letter-spacing: -0.16em; }
-#graphic:target ~ main .graphic .t-normal  { letter-spacing: 0.12em; }
-#graphic:target ~ main .graphic .t-wide    { letter-spacing: 0.30em; }
-#graphic:target ~ main .graphic .t-wider   { letter-spacing: 0.52em; }
+.writing-titles a {
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 14px;
+  letter-spacing: 0.18em;
+}
+
+/* WEIRD BASE SPACING */
+.writing-titles a:nth-child(1) { letter-spacing: 0.32em; }
+.writing-titles a:nth-child(2) { letter-spacing: 0.12em; }
+.writing-titles a:nth-child(3) { letter-spacing: 0.44em; }
+.writing-titles a:nth-child(4) { letter-spacing: 0.20em; }
+
+/* ACTIVE STATES */
+#graphic:target ~ main .graphic,
+#writing:target ~ main .writing {
+  color: red;
+}
 
 #graphic:target ~ main .graphic-section {
   display: block;
 }
 
-/* WRITING ACTIVE */
-#writing:target ~ main .writing {
-  color: red;
-}
-
-#writing:target ~ main .writing .t-tight   { letter-spacing: -0.16em; }
-#writing:target ~ main .writing .t-normal  { letter-spacing: 0.12em; }
-#writing:target ~ main .writing .t-wide    { letter-spacing: 0.30em; }
-#writing:target ~ main .writing .t-wider   { letter-spacing: 0.52em; }
-
 #writing:target ~ main .writing-section {
   display: block;
+}
+
+/* WRITING PIECE ACTIVE */
+#amber:target ~ main .amber,
+#oceans:target ~ main .oceans,
+#merlin:target ~ main .merlin,
+#office:target ~ main .office {
+  color: red;
+  letter-spacing: calc(2 * var(--ls));
 }
 
 /* ---------- LOGO ---------- */
@@ -123,9 +123,13 @@ main {
 
 <body>
 
-<!-- invisible anchors controlling state -->
+<!-- state anchors -->
 <div id="graphic"></div>
 <div id="writing"></div>
+<div id="amber"></div>
+<div id="oceans"></div>
+<div id="merlin"></div>
+<div id="office"></div>
 
 <main>
 
@@ -133,22 +137,18 @@ main {
   <div class="email">houmanifadi@gmail.com</div>
 
   <nav class="categories">
-
-    <!-- GRAPHIC DESIGN -->
     <a href="#graphic" class="graphic">
       <span class="t-tight">g</span><span class="t-wide">r</span><span class="t-normal">a</span><span class="t-tight">p</span><span class="t-wider">h</span><span class="t-tight">i</span><span class="t-wide">c</span>
       <span class="space"></span>
       <span class="t-normal">d</span><span class="t-tight">e</span><span class="t-wider">s</span><span class="t-tight">i</span><span class="t-wide">g</span><span class="t-normal">n</span>
     </a>
 
-    <!-- WRITING -->
     <a href="#writing" class="writing">
       <span class="t-wide">w</span><span class="t-tight">r</span><span class="t-wider">i</span><span class="t-tight">t</span><span class="t-normal">i</span><span class="t-wide">n</span><span class="t-tight">g</span>
     </a>
-
   </nav>
 
-  <!-- GRAPHIC CONTENT -->
+  <!-- GRAPHIC -->
   <section class="section graphic-section">
     <div class="grid">
       <img src="images/gd1.jpg">
@@ -157,18 +157,27 @@ main {
     </div>
   </section>
 
-  <!-- WRITING CONTENT -->
+  <!-- WRITING -->
   <section class="section writing-section">
+
+    <div class="writing-titles">
+      <a href="#amber" class="amber" style="--ls:0.32em;">tales of amber</a>
+      <a href="#oceans" class="oceans" style="--ls:0.12em;">all oceans break loose</a>
+      <a href="#merlin" class="merlin" style="--ls:0.44em;">merlin</a>
+      <a href="#office" class="office" style="--ls:0.20em;">at the office (ennui)</a>
+    </div>
+
     <div class="grid">
       <img src="images/w1.jpg">
       <img src="images/w2.jpg">
       <img src="images/w3.jpg">
     </div>
+
   </section>
 
 </main>
 
-<img src="ass_logo.jpg" alt="logo" class="bottom-logo">
+<img src="ass_logo.jpg" class="bottom-logo">
 
 </body>
 </html>
