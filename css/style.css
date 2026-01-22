@@ -58,3 +58,14 @@ body {
     letter-spacing: 0.18em;
     margin-top: 0.1em;
 }
+/* micro-kerning classes */
+.t-tight { margin-right: -0.04em; }
+.t-normal { margin-right: 0em; }
+.t-wide { margin-right: 0.08em; }
+.t-wider { margin-right: 0.14em; }
+
+.space {
+    display: inline-block;
+    width: 0.4em;
+}
+
