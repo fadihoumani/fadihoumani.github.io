@@ -29,7 +29,9 @@ main {
   font-size: 20px;
 }
 
-.email { margin-bottom: 28px; }
+.email {
+  margin-bottom: 28px;
+}
 
 /* ---------- CATEGORIES ---------- */
 .categories a {
@@ -53,61 +55,58 @@ main {
 /* ---------- SECTIONS ---------- */
 .section {
   display: none;
-  margin-top: 48px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.section img {
-  width: 100%;
-  border: 1px solid black;
+  margin-top: 64px;
 }
 
 /* ---------- WRITING TITLES ---------- */
 .writing-titles {
-  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 48px;
+  margin-bottom: 64px;
 }
 
 .writing-titles a {
-  display: block;
   font-size: 18px;
   text-decoration: none;
   color: black;
-  margin-bottom: 14px;
-  letter-spacing: 0.18em;
+  margin-bottom: 22px;
+  letter-spacing: var(--ls);
 }
 
-/* WEIRD BASE SPACING */
-.writing-titles a:nth-child(1) { letter-spacing: 0.32em; }
-.writing-titles a:nth-child(2) { letter-spacing: 0.12em; }
-.writing-titles a:nth-child(3) { letter-spacing: 0.44em; }
-.writing-titles a:nth-child(4) { letter-spacing: 0.20em; }
+/* ---------- TARGET STATES ---------- */
 
-/* ACTIVE STATES */
-#graphic:target ~ main .graphic,
-#writing:target ~ main .writing {
+/* graphic */
+#graphic:target ~ main .graphic {
   color: red;
 }
-
 #graphic:target ~ main .graphic-section {
   display: block;
 }
 
+/* writing */
+#writing:target ~ main .writing {
+  color: red;
+}
 #writing:target ~ main .writing-section {
   display: block;
 }
 
-/* WRITING PIECE ACTIVE */
+/* individual writing pieces */
 #amber:target ~ main .amber,
 #oceans:target ~ main .oceans,
 #merlin:target ~ main .merlin,
 #office:target ~ main .office {
   color: red;
-  letter-spacing: calc(2 * var(--ls));
+  letter-spacing: calc(var(--ls) * 2);
+}
+
+#amber:target ~ main .amber-section,
+#oceans:target ~ main .oceans-section,
+#merlin:target ~ main .merlin-section,
+#office:target ~ main .office-section {
+  display: block;
 }
 
 /* ---------- LOGO ---------- */
@@ -150,11 +149,7 @@ main {
 
   <!-- GRAPHIC -->
   <section class="section graphic-section">
-    <div class="grid">
-      <img src="images/gd1.jpg">
-      <img src="images/gd2.jpg">
-      <img src="images/gd3.jpg">
-    </div>
+    <!-- graphic content later -->
   </section>
 
   <!-- WRITING -->
@@ -167,12 +162,23 @@ main {
       <a href="#office" class="office" style="--ls:0.20em;">at the office (ennui)</a>
     </div>
 
-    <div class="grid">
-      <img src="images/w1.jpg">
-      <img src="images/w2.jpg">
-      <img src="images/w3.jpg">
-    </div>
+  </section>
 
+  <!-- INDIVIDUAL WRITING PAGES -->
+  <section class="section amber-section">
+    <!-- text goes here -->
+  </section>
+
+  <section class="section oceans-section">
+    <!-- text goes here -->
+  </section>
+
+  <section class="section merlin-section">
+    <!-- text goes here -->
+  </section>
+
+  <section class="section office-section">
+    <!-- text goes here -->
   </section>
 
 </main>
