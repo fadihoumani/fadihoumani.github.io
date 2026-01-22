@@ -48,13 +48,13 @@ body {
 /* Role line */
 .site-header .role {
     font-size: 0.9em;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.09em;
     margin-top: 0.1em;
 }
 
 /* Email line */
 .site-header .email {
-    font-size: 3em;
+    font-size: 0.9em;
     letter-spacing: 0.18em;
     margin-top: 0.1em;
 }
