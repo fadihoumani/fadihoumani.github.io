@@ -20,12 +20,12 @@ body {
 /* Bottom-left logo */
 .site-header .bottom-logo {
     position: absolute;
-    bottom: 0.3rem;
-    left: 0.3rem;
+    bottom: 0.4rem;
+    left: 0.4rem;
     width: 300px;
     height: auto;
 
-    border: 0.5px solid black;   /* ← this is the frame */
+    border: 0.7px solid black;   /* ← this is the frame */
     padding: 0.3rem;           /* space between image and frame */
 }
 
