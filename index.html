@@ -7,12 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
 
 <style>
+/* ---------- RESET ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ---------- BASE ---------- */
 body {
   font-family: 'Libre Baskerville', serif;
   background: white;
@@ -24,6 +26,7 @@ main {
   padding: 40px;
 }
 
+/* ---------- HEADER TEXT ---------- */
 .name,
 .email {
   font-size: 20px;
@@ -39,18 +42,9 @@ main {
   font-size: 20px;
   text-decoration: none;
   color: black;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   white-space: nowrap;
 }
-
-/* ---------- LETTER CONTROL ---------- */
-.categories span { display: inline-block; }
-.space { width: 0.6em; display: inline-block; }
-
-.t-tight  { letter-spacing: -0.08em; }
-.t-normal { letter-spacing: 0em; }
-.t-wide   { letter-spacing: 0.14em; }
-.t-wider  { letter-spacing: 0.28em; }
 
 /* ---------- SECTIONS ---------- */
 .section {
@@ -58,55 +52,57 @@ main {
   margin-top: 64px;
 }
 
-/* ---------- WRITING TITLES ---------- */
+/* ---------- WRITING LIST ---------- */
 .writing-titles {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 48px;
-  margin-bottom: 64px;
+  gap: 28px;
 }
 
 .writing-titles a {
-  font-size: 18px;
   text-decoration: none;
   color: black;
-  margin-bottom: 22px;
-  letter-spacing: var(--ls);
+  font-size: 18px;
 }
 
-/* ---------- TARGET STATES ---------- */
+/* ---------- ACTIVE STATES ---------- */
 
-/* graphic */
+/* GRAPHIC */
 #graphic:target ~ main .graphic {
   color: red;
+  letter-spacing: 0.32em;
 }
+
 #graphic:target ~ main .graphic-section {
   display: block;
 }
 
-/* writing */
-#writing:target ~ main .writing {
+/* WRITING (parent) */
+#writing:target ~ main .writing,
+#writing-amber:target ~ main .writing,
+#writing-oceans:target ~ main .writing,
+#writing-merlin:target ~ main .writing,
+#writing-office:target ~ main .writing {
   color: red;
+  letter-spacing: 0.32em;
 }
-#writing:target ~ main .writing-section {
+
+#writing:target ~ main .writing-section,
+#writing-amber:target ~ main .writing-section,
+#writing-oceans:target ~ main .writing-section,
+#writing-merlin:target ~ main .writing-section,
+#writing-office:target ~ main .writing-section {
   display: block;
 }
 
-/* individual writing pieces */
-#amber:target ~ main .amber,
-#oceans:target ~ main .oceans,
-#merlin:target ~ main .merlin,
-#office:target ~ main .office {
+/* INDIVIDUAL WRITING PIECES */
+#writing-amber:target ~ main .amber,
+#writing-oceans:target ~ main .oceans,
+#writing-merlin:target ~ main .merlin,
+#writing-office:target ~ main .office {
   color: red;
-  letter-spacing: calc(var(--ls) * 2);
-}
-
-#amber:target ~ main .amber-section,
-#oceans:target ~ main .oceans-section,
-#merlin:target ~ main .merlin-section,
-#office:target ~ main .office-section {
-  display: block;
+  letter-spacing: 0.6em;
 }
 
 /* ---------- LOGO ---------- */
@@ -122,13 +118,14 @@ main {
 
 <body>
 
-<!-- state anchors -->
+<!-- STATE ANCHORS -->
 <div id="graphic"></div>
+
 <div id="writing"></div>
-<div id="amber"></div>
-<div id="oceans"></div>
-<div id="merlin"></div>
-<div id="office"></div>
+<div id="writing-amber"></div>
+<div id="writing-oceans"></div>
+<div id="writing-merlin"></div>
+<div id="writing-office"></div>
 
 <main>
 
@@ -136,54 +133,32 @@ main {
   <div class="email">houmanifadi@gmail.com</div>
 
   <nav class="categories">
-    <a href="#graphic" class="graphic">
-      <span class="t-tight">g</span><span class="t-wide">r</span><span class="t-normal">a</span><span class="t-tight">p</span><span class="t-wider">h</span><span class="t-tight">i</span><span class="t-wide">c</span>
-      <span class="space"></span>
-      <span class="t-normal">d</span><span class="t-tight">e</span><span class="t-wider">s</span><span class="t-tight">i</span><span class="t-wide">g</span><span class="t-normal">n</span>
-    </a>
-
-    <a href="#writing" class="writing">
-      <span class="t-wide">w</span><span class="t-tight">r</span><span class="t-wider">i</span><span class="t-tight">t</span><span class="t-normal">i</span><span class="t-wide">n</span><span class="t-tight">g</span>
-    </a>
+    <a href="#graphic" class="graphic">graphic design</a>
+    <a href="#writing" class="writing">writing</a>
   </nav>
 
-  <!-- GRAPHIC -->
-  <section class="section graphic-section">
-    <!-- graphic content later -->
-  </section>
+  <!-- GRAPHIC SECTION (empty for now) -->
+  <section class="section graphic-section"></section>
 
   <!-- WRITING -->
   <section class="section writing-section">
-
     <div class="writing-titles">
-      <a href="#amber" class="amber" style="--ls:0.32em;">tales of amber</a>
-      <a href="#oceans" class="oceans" style="--ls:0.12em;">all oceans break loose</a>
-      <a href="#merlin" class="merlin" style="--ls:0.44em;">merlin</a>
-      <a href="#office" class="office" style="--ls:0.20em;">at the office (ennui)</a>
+      <a href="#writing-amber"  class="piece amber">tales of amber</a>
+      <a href="#writing-oceans" class="piece oceans">all oceans break loose</a>
+      <a href="#writing-merlin" class="piece merlin">merlin</a>
+      <a href="#writing-office" class="piece office">at the office (ennui)</a>
     </div>
-
   </section>
 
-  <!-- INDIVIDUAL WRITING PAGES -->
-  <section class="section amber-section">
-    <!-- text goes here -->
-  </section>
-
-  <section class="section oceans-section">
-    <!-- text goes here -->
-  </section>
-
-  <section class="section merlin-section">
-    <!-- text goes here -->
-  </section>
-
-  <section class="section office-section">
-    <!-- text goes here -->
-  </section>
+  <!-- INDIVIDUAL TEXT PAGES (you’ll fill later) -->
+  <section class="section amber-section"></section>
+  <section class="section oceans-section"></section>
+  <section class="section merlin-section"></section>
+  <section class="section office-section"></section>
 
 </main>
 
-<img src="ass_logo.jpg" class="bottom-logo">
+<img src="ass_logo.jpg" alt="logo" class="bottom-logo">
 
 </body>
 </html>
