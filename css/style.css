@@ -41,20 +41,20 @@ body {
 /* Name line */
 .site-header .name {
     font-size: 1.4em;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.28em;
     font-weight: bold;
 }
 
 /* Role line */
 .site-header .role {
     font-size: 0.9em;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.12em;
     margin-top: 0.1em;
 }
 
 /* Email line */
 .site-header .email {
     font-size: 0.9em;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.18em;
     margin-top: 0.1em;
 }
