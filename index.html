@@ -2,109 +2,165 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>My Minimal Site</title>
+<title>Fadi Houmani</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
 
 <style>
-/* reset */
+/* ---------- RESET ---------- */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* ---------- BASE ---------- */
 body {
   font-family: 'Libre Baskerville', serif;
   background: white;
-  height: 100vh;
+  color: black;
+  min-height: 100vh;
 }
 
-/* layout */
-.site-header {
-  position: relative;
-  height: 100vh;
+main {
   padding: 80px;
 }
 
-/* text block */
-.text-block {
+/* ---------- TEXT ---------- */
+.name {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.categories a {
+  display: block;
+  font-size: 48px;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 12px;
   white-space: nowrap;
 }
 
-/* typography */
-.name,
-.role,
-.email {
-  font-size: 20px;
-  line-height: 1.15;
-  margin-bottom: 18px;
-}
-
-/* spacing atoms */
-.space {
+/* ---------- LETTER CONTROL ---------- */
+.categories span {
   display: inline-block;
-  width: 0.6em;
 }
 
-/* TRACKING VARIANTS — exaggerated but controlled */
+.space {
+  width: 0.6em;
+  display: inline-block;
+}
+
 .t-tight   { letter-spacing: -0.08em; }
 .t-normal  { letter-spacing: 0em; }
-.t-wide    { letter-spacing: 0.12em; }
-.t-wider   { letter-spacing: 0.22em; }
-.t-chaos   { letter-spacing: -0.15em; }
+.t-wide    { letter-spacing: 0.14em; }
+.t-wider   { letter-spacing: 0.28em; }
 
-/* micro vertical jitter (subtle, not gimmicky) */
-.up    { position: relative; top: -1px; }
-.down  { position: relative; top: 2px; }
+/* ---------- CONTENT ---------- */
+.section {
+  display: none;
+  margin-top: 48px;
+}
 
-/* logo */
-.bottom-logo {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  width: 200px;
+.section img {
+  width: 100%;
   border: 1px solid black;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ---------- TARGET LOGIC ---------- */
+
+/* GRAPHIC DESIGN ACTIVE */
+#graphic:target ~ main .graphic {
+  color: red;
+}
+
+#graphic:target ~ main .graphic .t-tight   { letter-spacing: -0.16em; }
+#graphic:target ~ main .graphic .t-normal  { letter-spacing: 0.12em; }
+#graphic:target ~ main .graphic .t-wide    { letter-spacing: 0.30em; }
+#graphic:target ~ main .graphic .t-wider   { letter-spacing: 0.52em; }
+
+#graphic:target ~ main .graphic-section {
+  display: block;
+}
+
+/* WRITING ACTIVE */
+#writing:target ~ main .writing {
+  color: red;
+}
+
+#writing:target ~ main .writing .t-tight   { letter-spacing: -0.16em; }
+#writing:target ~ main .writing .t-normal  { letter-spacing: 0.12em; }
+#writing:target ~ main .writing .t-wide    { letter-spacing: 0.30em; }
+#writing:target ~ main .writing .t-wider   { letter-spacing: 0.52em; }
+
+#writing:target ~ main .writing-section {
+  display: block;
+}
+
+/* ---------- LOGO ---------- */
+.bottom-logo {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  width: 140px;
+  border: 1.5px solid black;
 }
 </style>
 </head>
 
 <body>
 
-<header class="site-header">
+<!-- Invisible anchors controlling state -->
+<div id="graphic"></div>
+<div id="writing"></div>
 
-  <div class="text-block">
+<main>
 
-    <div class="name">
-      <span class="t-chaos">f</span><span class="t-tight up">a</span><span class="t-wide">d</span><span class="t-normal">i</span>
+  <div class="name">fadi houmani</div>
+
+  <nav class="categories">
+
+    <!-- GRAPHIC DESIGN -->
+    <a href="#graphic" class="graphic">
+      <span class="t-tight">g</span><span class="t-wide">r</span><span class="t-normal">a</span><span class="t-tight">p</span><span class="t-wider">h</span><span class="t-tight">i</span><span class="t-wide">c</span>
       <span class="space"></span>
-      <span class="t-wide">h</span><span class="t-normal down">o</span><span class="t-wider">u</span><span class="t-chaos">m</span><span class="t-tight">a</span><span class="t-normal">n</span><span class="t-tight up">i</span>
+      <span class="t-normal">d</span><span class="t-tight">e</span><span class="t-wider">s</span><span class="t-tight">i</span><span class="t-wide">g</span><span class="t-normal">n</span>
+    </a>
+
+    <!-- WRITING -->
+    <a href="#writing" class="writing">
+      <span class="t-wide">w</span><span class="t-tight">r</span><span class="t-wider">i</span><span class="t-tight">t</span><span class="t-normal">i</span><span class="t-wide">n</span><span class="t-tight">g</span>
+    </a>
+
+  </nav>
+
+  <!-- GRAPHIC DESIGN CONTENT -->
+  <section class="section graphic-section">
+    <div class="grid">
+      <img src="images/gd1.jpg">
+      <img src="images/gd2.jpg">
+      <img src="images/gd3.jpg">
     </div>
+  </section>
 
-    <div class="role">
-      <span class="t-tight">g</span><span class="t-wide up">r</span><span class="t-normal">a</span><span class="t-chaos">p</span><span class="t-wider">h</span><span class="t-tight">i</span><span class="t-wide down">c</span>
-      <span class="space"></span>
-      <span class="t-normal">d</span><span class="t-chaos">e</span><span class="t-wider up">s</span><span class="t-tight">i</span><span class="t-wide">g</span><span class="t-normal down">n</span>
-      <span class="space"></span>
-      <span class="t-tight">a</span><span class="t-wider up">n</span><span class="t-chaos">d</span>
-      <span class="space"></span>
-      <span class="t-wide">w</span><span class="t-chaos">r</span><span class="t-wider up">i</span><span class="t-tight">t</span><span class="t-normal down">i</span><span class="t-wide">n</span><span class="t-tight">g</span>
+  <!-- WRITING CONTENT -->
+  <section class="section writing-section">
+    <div class="grid">
+      <img src="images/w1.jpg">
+      <img src="images/w2.jpg">
+      <img src="images/w3.jpg">
     </div>
+  </section>
 
-    <div class="email">
-      <span class="t-tight">h</span><span class="t-wide">o</span><span class="t-chaos">u</span><span class="t-normal">m</span><span class="t-wider up">a</span><span class="t-tight">n</span><span class="t-wide">i</span>
-      <span class="t-chaos">f</span><span class="t-normal">a</span><span class="t-wide">d</span><span class="t-tight">i</span>
-      <span class="t-wider">@</span>
-      <span class="t-tight">g</span><span class="t-wide">m</span><span class="t-chaos">a</span><span class="t-normal">i</span><span class="t-wide">l</span>
-      <span class="t-tight">.</span>
-      <span class="t-normal">c</span><span class="t-chaos">o</span><span class="t-wide">m</span>
-    </div>
+</main>
 
-  </div>
-
-  <img src="ass_logo.jpg" alt="Bottom logo" class="bottom-logo">
-
-</header>
+<img src="ass_logo.jpg" alt="logo" class="bottom-logo">
 
 </body>
 </html>
