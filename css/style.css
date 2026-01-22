@@ -72,3 +72,29 @@ body {
     white-space: nowrap;
 }
 
+/* ===============================
+   WRITING – OFFICE TEXT LAYOUT
+   =============================== */
+
+.office-section {
+    max-width: 640px;
+    margin: 80px auto 120px auto;
+    line-height: 1.55;
+    font-size: 16px;
+}
+
+.office-section p {
+    margin-bottom: 22px;
+}
+
+/* centered (...) separators */
+.office-section .ellipsis {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* italic blocks */
+.office-section .italic {
+    font-style: italic;
+}
+
