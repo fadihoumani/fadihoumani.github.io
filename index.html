@@ -1,110 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Fadi Houmani</title>
+    <meta charset="UTF-8">
+    <title>Fadi Houmani</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+    <style>
+        /* -------------------------
+           ORIGINAL CSS – DO NOT TOUCH
+           ------------------------- */
+
+        /* Reset body and basic font */
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            line-height: 1.5;
+            color: #111;
+        }
+
+        /* Header takes full screen */
+        .site-header {
+            position: relative;
+            font-family: 'Libre Baskerville', serif;
+            text-transform: none;
+            width: 100vw;
+            height: 100vh;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        /* Text block near top-left */
+        .text-block {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            transform: none;
+            white-space: nowrap;
+        }
+
+        .name {
+            font-size: 1.4em;
+            letter-spacing: 0.28em;
+            font-weight: bold;
+        }
+
+        .role {
+            font-size: 0.9em;
+            letter-spacing: 0.09em;
+            margin-top: 0.1em;
+        }
+
+        .email {
+            font-size: 0.9em;
+            letter-spacing: 0.18em;
+            margin-top: 0.1em;
+        }
+
+        /* micro-kerning classes */
+        .t-tight { margin-right: -0.04em; }
+        .t-normal { margin-right: 0em; }
+        .t-wide { margin-right: 0.08em; }
+        .t-wider { margin-right: 0.14em; }
+
+        .space {
+            display: inline-block;
+            width: 0.4em;
+        }
+
+        /* ===============================
+           WRITING – OFFICE TEXT LAYOUT
+           =============================== */
+
+        .office-section {
+            max-width: 100%;
+            margin: 40px auto;
+            line-height: 1.4;
+            font-size: 15px;
+            color: black;
+        }
+
+        .office-section p {
+            margin: 0 0 12px 0;
+        }
+
+        .office-section .ellipsis {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .office-section .italic {
+            font-style: italic;
+        }
+
+        /* ---------- EXISTING HTML/CATEGORY CSS ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            background: white;
+            color: black;
+            min-height: 100vh;
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        .name,
+        .email {
+            font-size: 20px;
+        }
+
+        .email {
+            margin-bottom: 28px;
+        }
+
+        .categories a {
+            display: block;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            margin-bottom: 14px;
+            white-space: nowrap;
+        }
+
+        .section {
+            display: none;
+            margin-top: 64px;
+        }
+
+        .writing-titles {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .writing-titles a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        /* ---------- ACTIVE STATES ---------- */
+
+        /* GRAPHIC */
+        #graphic:target ~ main .graphic {
+            color: red;
+            letter-spacing: 0.32em;
+        }
+
+        #graphic:target ~ main .graphic-section {
+            display: block;
+        }
+
+        /* WRITING PARENT */
+        #writing:target ~ main .writing,
+        #writing-amber:target ~ main .writing,
+        #writing-oceans:target ~ main .writing,
+        #writing-merlin:target ~ main .writing,
+        #writing-office:target ~ main .writing {
+            color: red;
+            letter-spacing: 0.32em;
+        }
+
+        #writing:target ~ main .writing-section,
+        #writing-amber:target ~ main .writing-section,
+        #writing-oceans:target ~ main .writing-section,
+        #writing-merlin:target ~ main .writing-section,
+        #writing-office:target ~ main .writing-section {
+            display: block;
+        }
+
+        /* INDIVIDUAL WRITING PIECES */
+        #writing-amber:target ~ main .amber,
+        #writing-oceans:target ~ main .oceans,
+        #writing-merlin:target ~ main .merlin,
+        #writing-office:target ~ main .office {
+            color: red;
+            letter-spacing: 0.6em;
+        }
+
+        /* SHOW OFFICE SECTION */
+        #writing-office:target ~ main .office-section {
+            display: block;
+        }
+
+        /* ---------------------------
+           FIXED SCROLL-UP LOGO
+           --------------------------- */
+        .bottom-logo {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            width: 200px;
+            height: auto;
+            border: 1px solid black;
+            padding: 0.3rem;
+            cursor: pointer;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- STATE ANCHORS -->
-<div id="graphic"></div>
-<div id="writing"></div>
+    <!-- STATE ANCHORS -->
+    <div id="graphic"></div>
+    <div id="writing"></div>
+    <div id="writing-amber"></div>
+    <div id="writing-oceans"></div>
+    <div id="writing-merlin"></div>
+    <div id="writing-office"></div>
 
-<div id="writing-amber"></div>
-<div id="writing-oceans"></div>
-<div id="writing-merlin"></div>
-<div id="writing-office"></div>
+    <main>
+        <div class="name">fadi houmani</div>
+        <div class="email">houmanifadi@gmail.com</div>
 
-<main>
+        <nav class="categories">
+            <a href="#graphic" class="graphic">graphic design</a>
+            <a href="#writing" class="writing">writing</a>
+        </nav>
 
-  <div class="name">fadi houmani</div>
-  <div class="email">houmanifadi@gmail.com</div>
+        <!-- GRAPHIC SECTION -->
+        <section class="section graphic-section"></section>
 
-  <!-- =====================
-       MAIN CATEGORIES
-       ===================== -->
+        <!-- WRITING SECTION -->
+        <section class="section writing-section">
+            <div class="writing-titles">
+                <a href="#writing-amber" class="piece amber">tales of amber</a>
+                <a href="#writing-oceans" class="piece oceans">all oceans break loose</a>
+                <a href="#writing-merlin" class="piece merlin">merlin</a>
+                <a href="#writing-office" class="piece office">at the office (ennui)</a>
+            </div>
+        </section>
 
-  <nav class="categories">
+        <!-- INDIVIDUAL TEXT PAGES -->
+        <section class="section amber-section"></section>
+        <section class="section oceans-section"></section>
+        <section class="section merlin-section"></section>
 
-    <!-- GRAPHIC DESIGN -->
-    <a href="#graphic" class="graphic">
-      <span class="t-tight">g</span><span class="t-wide">r</span><span class="t-normal">a</span><span class="t-tight">p</span>
-      <span class="t-wider">h</span><span class="t-tight">i</span><span class="t-wide">c</span>
-      <span class="space"></span>
-      <span class="t-normal">d</span><span class="t-tight">e</span><span class="t-wider">s</span>
-      <span class="t-tight">i</span><span class="t-wide">g</span><span class="t-normal">n</span>
+        <!-- OFFICE SECTION -->
+        <section class="section office-section office">
+            <div class="ellipsis">(...)</div>
+
+            <p class="italic">
+                What a cunt she is. I have always loved the word cunt, rather sexist but so diminishing...
+            </p>
+
+            <div class="ellipsis">(...)</div>
+
+            <p>
+                The floor of an office building, at night, diaphanous and with pillars scattered throughout the floor...
+            </p>
+
+            <p>
+                Since there’s nothing on the vast floor, she can hear her own body...
+            </p>
+
+            <p>
+                Let me give you an example, simple yet illustrative...
+            </p>
+
+            <p>
+                She’s here because a series of events in her life have led her to the state of immobility...
+            </p>
+
+            <div class="ellipsis">(...)</div>
+
+            <p class="italic">
+                He showed up, this little Devil, for the first time when I was a kid...
+            </p>
+
+            <div class="ellipsis">(...)</div>
+
+            <p>
+                From the office building, and looking out the window at the titanic battle of lovers...
+            </p>
+
+            <p>
+                These buildings embody the arrogance of mankind...
+            </p>
+
+            <p>
+                The lights go yellow.<br>
+                The lights go red.
+            </p>
+        </section>
+    </main>
+
+    <!-- CLICKABLE SCROLL-UP LOGO -->
+    <a href="#">
+        <img src="ass_logo.jpg" alt="logo" class="bottom-logo">
     </a>
-
-    <!-- WRITING -->
-    <a href="#writing" class="writing">
-      <span class="t-wide">w</span><span class="t-tight">r</span><span class="t-wider">i</span>
-      <span class="t-tight">t</span><span class="t-normal">i</span><span class="t-wide">n</span><span class="t-tight">g</span>
-    </a>
-
-  </nav>
-
-  <!-- =====================
-       GRAPHIC CONTENT
-       ===================== -->
-
-  <section class="section graphic-section">
-    <!-- your graphic work later -->
-  </section>
-
-  <!-- =====================
-       WRITING LIST
-       ===================== -->
-
-  <section class="section writing-section">
-
-    <nav class="writing-titles">
-
-      <a href="#writing-amber" class="amber">
-        <span class="t-wide">a</span><span class="t-tight">m</span><span class="t-wider">b</span>
-        <span class="t-tight">e</span><span class="t-normal">r</span>
-      </a>
-
-      <a href="#writing-oceans" class="oceans">
-        <span class="t-wide">o</span><span class="t-tight">c</span><span class="t-wider">e</span>
-        <span class="t-tight">a</span><span class="t-normal">n</span><span class="t-wide">s</span>
-      </a>
-
-      <a href="#writing-merlin" class="merlin">
-        <span class="t-wide">m</span><span class="t-tight">e</span><span class="t-wider">r</span>
-        <span class="t-tight">l</span><span class="t-normal">i</span><span class="t-wide">n</span>
-      </a>
-
-      <a href="#writing-office" class="office">
-        <span class="t-wide">a</span><span class="t-tight">t</span>
-        <span class="space"></span>
-        <span class="t-wider">t</span><span class="t-tight">h</span><span class="t-normal">e</span>
-        <span class="space"></span>
-        <span class="t-wide">o</span><span class="t-tight">f</span><span class="t-wider">f</span>
-        <span class="t-tight">i</span><span class="t-normal">c</span><span class="t-wide">e</span>
-      </a>
-
-    </nav>
-
-  </section>
-
-  <!-- =====================
-       OFFICE TEXT PAGE
-       ===================== -->
-
-  <section class="section office-section">
-
-    <!-- you will paste text here later -->
-    <p>Text goes here.</p>
-
-  </section>
-
-</main>
-
-<img src="ass_logo.jpg" alt="logo" class="bottom-logo">
 
 </body>
 </html>
