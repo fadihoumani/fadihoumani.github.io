@@ -5,14 +5,99 @@
 <title>Fadi Houmani</title>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
 <style>
-/* ---------- RESET ---------- */
+/* -------------------------
+   ORIGINAL CSS – DO NOT TOUCH
+   ------------------------- */
+
+/* Reset body and basic font */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    line-height: 1.5;
+    color: #111;
+}
+
+/* Header takes full screen */
+.site-header {
+    position: relative;
+    font-family: 'Libre Baskerville', serif; /* Plantin-like */
+    text-transform: none;
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* Text block near top-left */
+.text-block {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    transform: none;
+    white-space: nowrap;
+}
+
+.name {
+    font-size: 1.4em;
+    letter-spacing: 0.28em;
+    font-weight: bold;
+}
+
+.role {
+    font-size: 0.9em;
+    letter-spacing: 0.09em;
+    margin-top: 0.1em;
+}
+
+.email {
+    font-size: 0.9em;
+    letter-spacing: 0.18em;
+    margin-top: 0.1em;
+}
+
+/* micro-kerning classes */
+.t-tight { margin-right: -0.04em; }
+.t-normal { margin-right: 0em; }
+.t-wide { margin-right: 0.08em; }
+.t-wider { margin-right: 0.14em; }
+
+.space {
+    display: inline-block;
+    width: 0.4em;
+}
+
+/* ===============================
+   WRITING – OFFICE TEXT LAYOUT
+   =============================== */
+
+.office-section {
+    max-width: 100%;       /* full width */
+    margin: 40px auto;     /* less vertical margin */
+    line-height: 1.4;      /* tighter lines */
+    font-size: 15px;       /* slightly smaller */
+    color: black;          /* black text */
+}
+
+.office-section p {
+    margin: 0 0 12px 0;    /* minimal spacing between paragraphs */
+}
+
+.office-section .ellipsis {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.office-section .italic {
+    font-style: italic;    /* keep italics */
+}
+
+/* ---------- EXISTING HTML/CATEGORY CSS ---------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ---------- BASE ---------- */
 body {
     font-family: 'Libre Baskerville', serif;
     background: white;
@@ -24,16 +109,9 @@ main {
     padding: 40px;
 }
 
-/* ---------- HEADER TEXT ---------- */
-.name, .email {
-    font-size: 20px;
-}
+.name, .email { font-size: 20px; }
+.email { margin-bottom: 28px; }
 
-.email {
-    margin-bottom: 28px;
-}
-
-/* ---------- CATEGORIES ---------- */
 .categories a {
     display: block;
     font-size: 20px;
@@ -43,13 +121,8 @@ main {
     white-space: nowrap;
 }
 
-/* ---------- SECTIONS ---------- */
-.section {
-    display: none;
-    margin-top: 64px;
-}
+.section { display: none; margin-top: 64px; }
 
-/* ---------- WRITING LIST ---------- */
 .writing-titles {
     display: flex;
     flex-direction: column;
@@ -64,82 +137,49 @@ main {
 }
 
 /* ---------- ACTIVE STATES ---------- */
-/* GRAPHIC */
-#graphic:target ~ main .graphic {
-    color: red;
-    letter-spacing: 0.32em;
-}
-#graphic:target ~ main .graphic-section {
-    display: block;
-}
 
-/* WRITING (parent) */
+/* GRAPHIC */
+#graphic:target ~ main .graphic { color: red; letter-spacing: 0.32em; }
+#graphic:target ~ main .graphic-section { display: block; }
+
+/* WRITING PARENT */
 #writing:target ~ main .writing,
 #writing-amber:target ~ main .writing,
 #writing-oceans:target ~ main .writing,
 #writing-merlin:target ~ main .writing,
-#writing-office:target ~ main .writing {
-    color: red;
-    letter-spacing: 0.32em;
-}
+#writing-office:target ~ main .writing { color: red; letter-spacing: 0.32em; }
 
 #writing:target ~ main .writing-section,
 #writing-amber:target ~ main .writing-section,
 #writing-oceans:target ~ main .writing-section,
 #writing-merlin:target ~ main .writing-section,
-#writing-office:target ~ main .writing-section {
-    display: block;
-}
+#writing-office:target ~ main .writing-section { display: block; }
 
 /* INDIVIDUAL WRITING PIECES */
 #writing-amber:target ~ main .amber,
 #writing-oceans:target ~ main .oceans,
 #writing-merlin:target ~ main .merlin,
-#writing-office:target ~ main .office {
-    color: red;
-    letter-spacing: 0.6em;
-}
+#writing-office:target ~ main .office { color: red; letter-spacing: 0.6em; }
 
 /* SHOW OFFICE SECTION */
-#writing-office:target ~ main .office-section {
-    display: block;
-}
+#writing-office:target ~ main .office-section { display: block; }
 
-/* ---------- OFFICE TEXT STYLING ---------- */
-.office-section {
-    max-width: 640px;
-    margin: 80px auto 120px auto;
-    line-height: 1.55;
-    font-size: 16px;
-}
-
-.office-section p {
-    margin-bottom: 22px;
-}
-
-.office-section .ellipsis {
-    text-align: center;
-    margin: 40px 0;
-}
-
-.office-section .italic {
-    font-style: italic;
-}
-
-/* ---------- SCROLL-UP LOGO ---------- */
+/* ---------------------------
+   ADDED FOR FIXED SCROLL-UP LOGO
+   --------------------------- */
 .bottom-logo {
-    position: fixed;
+    position: fixed; /* stays visible */
     bottom: 40px;
     left: 40px;
     width: 200px;
     height: auto;
     border: 1px solid black;
     padding: 0.3rem;
-    cursor: pointer;
+    cursor: pointer; /* shows it’s clickable */
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* smooth scroll for clicking logo */
 }
 </style>
 </head>
@@ -166,7 +206,7 @@ html {
     <!-- GRAPHIC SECTION -->
     <section class="section graphic-section"></section>
 
-    <!-- WRITING LIST -->
+    <!-- WRITING SECTION -->
     <section class="section writing-section">
         <div class="writing-titles">
             <a href="#writing-amber" class="piece amber">tales of amber</a>
@@ -176,13 +216,13 @@ html {
         </div>
     </section>
 
-    <!-- INDIVIDUAL WRITING SECTIONS -->
+    <!-- INDIVIDUAL TEXT PAGES -->
     <section class="section amber-section"></section>
     <section class="section oceans-section"></section>
     <section class="section merlin-section"></section>
-
+    
     <!-- OFFICE SECTION -->
-    <section id="writing-office" class="section office-section office">
+    <section class="section office-section office">
         <div class="ellipsis">(...)</div>
 
         <p class="italic">
