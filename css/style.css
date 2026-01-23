@@ -13,7 +13,7 @@ body {
 /* Header takes full screen */
 .site-header {
     position: relative;
-    font-family: 'Libre Baskerville', serif; /* Plantin-like */
+    font-family: 'Libre Baskerville', serif;
     text-transform: none;
     width: 100vw;
     height: 100vh;
@@ -26,7 +26,6 @@ body {
     position: absolute;
     left: 1rem;
     top: 1rem;
-    transform: none;
     white-space: nowrap;
 }
 
@@ -49,41 +48,20 @@ body {
 }
 
 /* micro-kerning classes */
-.t-tight { margin-right: -0.04em; }
+.t-tight  { margin-right: -0.04em; }
 .t-normal { margin-right: 0em; }
-.t-wide { margin-right: 0.08em; }
-.t-wider { margin-right: 0.14em; }
+.t-wide   { margin-right: 0.08em; }
+.t-wider  { margin-right: 0.14em; }
 
 .space {
     display: inline-block;
     width: 0.4em;
 }
 
-/* ===============================
-   WRITING – OFFICE TEXT LAYOUT
-   =============================== */
+/* -------------------------
+   GLOBAL LAYOUT
+   ------------------------- */
 
-.office-section {
-    max-width: 640px;
-    margin: 80px auto 120px auto;
-    line-height: 1.55;
-    font-size: 16px;
-}
-
-.office-section p {
-    margin-bottom: 22px;
-}
-
-.office-section .ellipsis {
-    text-align: center;
-    margin: 40px 0;
-}
-
-.office-section .italic {
-    font-style: italic;
-}
-
-/* ---------- EXISTING HTML/CATEGORY CSS ---------- */
 * {
     margin: 0;
     padding: 0;
@@ -101,8 +79,18 @@ main {
     padding: 40px;
 }
 
-.name, .email { font-size: 20px; }
-.email { margin-bottom: 28px; }
+.name,
+.email {
+    font-size: 20px;
+}
+
+.email {
+    margin-bottom: 28px;
+}
+
+/* -------------------------
+   CATEGORIES
+   ------------------------- */
 
 .categories a {
     display: block;
@@ -113,7 +101,14 @@ main {
     white-space: nowrap;
 }
 
-.section { display: none; margin-top: 64px; }
+.section {
+    display: none;
+    margin-top: 64px;
+}
+
+/* -------------------------
+   WRITING TITLES
+   ------------------------- */
 
 .writing-titles {
     display: flex;
@@ -128,48 +123,85 @@ main {
     font-size: 18px;
 }
 
-/* ---------- ACTIVE STATES ---------- */
+/* -------------------------
+   OFFICE TEXT LAYOUT
+   ------------------------- */
+
+.office-section {
+    max-width: 640px;
+    margin: 80px auto 120px auto;
+    line-height: 1.55;
+    font-size: 16px;
+    color: black;
+}
+
+.office-section p {
+    margin-bottom: 22px;
+}
+
+.office-section .ellipsis {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.office-section .italic {
+    font-style: italic;
+}
+
+/* -------------------------
+   ACTIVE STATES
+   ------------------------- */
 
 /* GRAPHIC */
-#graphic:target ~ main .graphic { color: red; letter-spacing: 0.32em; }
-#graphic:target ~ main .graphic-section { display: block; }
+#graphic:target ~ main .graphic {
+    color: red;
+    letter-spacing: 0.32em;
+}
+
+#graphic:target ~ main .graphic-section {
+    display: block;
+}
 
 /* WRITING PARENT */
 #writing:target ~ main .writing,
 #writing-amber:target ~ main .writing,
 #writing-oceans:target ~ main .writing,
 #writing-merlin:target ~ main .writing,
-#writing-office:target ~ main .writing { color: red; letter-spacing: 0.32em; }
+#writing-office:target ~ main .writing {
+    color: red;
+    letter-spacing: 0.32em;
+}
 
 #writing:target ~ main .writing-section,
 #writing-amber:target ~ main .writing-section,
 #writing-oceans:target ~ main .writing-section,
 #writing-merlin:target ~ main .writing-section,
-#writing-office:target ~ main .writing-section { display: block; }
+#writing-office:target ~ main .writing-section {
+    display: block;
+}
 
-/* INDIVIDUAL WRITING PIECES */
+/* INDIVIDUAL WRITING PIECES (titles only) */
 #writing-amber:target ~ main .amber,
 #writing-oceans:target ~ main .oceans,
 #writing-merlin:target ~ main .merlin,
-#writing-office:target ~ main .office { color: red; letter-spacing: 0.6em; }
+#writing-office:target ~ main .office {
+    color: red;
+    letter-spacing: 0.6em;
+}
 
 /* SHOW OFFICE SECTION */
-#writing-office:target ~ main .office-section { display: block; }
+#writing-office:target ~ main .office-section {
+    display: block;
+    color: black; /* stays black */
+}
 
-/* ---------------------------
-   ADDED FOR FIXED SCROLL-UP LOGO
-   --------------------------- */
+/* -------------------------
+   FIXED SCROLL LOGO
+   ------------------------- */
+
 .bottom-logo {
-    position: fixed; /* stays visible */
+    position: fixed;
     bottom: 40px;
     left: 40px;
     width: 200px;
-    height: auto;
-    border: 1px solid black;
-    padding: 0.3rem;
-    cursor: pointer; /* shows it’s clickable */
-}
-
-html {
-    scroll-behavior: smooth; /* smooth scroll for clicking logo */
-}
+    heigh
