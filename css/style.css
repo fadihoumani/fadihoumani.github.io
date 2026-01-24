@@ -167,6 +167,39 @@ html {
   color: #333;
 }
 
+/* -------------------- GRAPHIC CAROUSEL -------------------- */
+.graphic-section {
+  max-width: 500px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
+}
+
+.carousel {
+  position: relative;
+  cursor: pointer;
+}
+
+.carousel img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+}
+
+.carousel-info {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.carousel::after {
+  content: '→ Click image to see next';
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+
 
 /* ---------- FIXED SCROLL LOGO ---------- */
 .bottom-logo {
