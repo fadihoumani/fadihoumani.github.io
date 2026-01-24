@@ -156,6 +156,15 @@ html {
     display: block;
 }
 
+/* Center only the ellipsis like in 'at the office (ennui)' */
+.ellipsis {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem; 
+    font-style: normal;
+    margin: 1.5rem 0;
+}
+
 
 /* ---------- FIXED SCROLL LOGO ---------- */
 .bottom-logo {
