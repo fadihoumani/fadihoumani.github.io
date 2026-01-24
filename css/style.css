@@ -150,6 +150,12 @@ html {
 #writing-amber:target ~ main .amber-section {
     display: block;
 }
+/* KEEP WRITING LIST VISIBLE WHEN A PIECE IS OPEN */
+#writing-amber:target ~ main .writing-section,
+#writing-office:target ~ main .writing-section {
+    display: block;
+}
+
 
 /* ---------- FIXED SCROLL LOGO ---------- */
 .bottom-logo {
