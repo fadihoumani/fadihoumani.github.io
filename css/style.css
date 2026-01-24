@@ -134,6 +134,22 @@ html {
     display: block;
 }
 
+/* ---------- RANDOM KERNING FOR HEADER & MAIN LINKS ---------- */
+.name,
+.email,
+.categories a {
+    letter-spacing: 0.1em; /* base spacing */
+    transition: letter-spacing 0.3s ease;
+}
+
+/* Optional: slight random variation on hover */
+.name:hover,
+.email:hover,
+.categories a:hover {
+    letter-spacing: 0.3em;
+}
+
+
 /* ---------- FIXED SCROLL LOGO ---------- */
 .bottom-logo {
     position: fixed;
