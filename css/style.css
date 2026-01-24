@@ -51,4 +51,104 @@ html {
 .writing-titles {
     display: flex;
     flex-direction: column;
-    ali
+    align-items: center;
+    gap: 28px;
+}
+
+.writing-titles a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+/* ---------- WRITING TEXT SECTIONS (CENTERED) ---------- */
+.writing-text-section {
+    max-width: 680px;
+    margin: 80px auto 120px auto;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.writing-text-section p {
+    margin-bottom: 22px;
+}
+
+.writing-text-section .italic {
+    font-style: italic;
+}
+
+.writing-text-section .center {
+    text-align: center;
+}
+
+.ellipsis {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    font-style: normal;
+    margin: 1.5rem 0;
+}
+
+/* ---------- ACTIVE STATES ---------- */
+
+/* GRAPHIC */
+#graphic:target ~ main .graphic {
+    color: red;
+    letter-spacing: 0.32em;
+}
+
+#graphic:target ~ main .graphic-section {
+    display: block;
+}
+
+/* WRITING (PARENT) */
+#writing:target ~ main .writing,
+#writing-amber:target ~ main .writing,
+#writing-oceans:target ~ main .writing,
+#writing-merlin:target ~ main .writing,
+#writing-office:target ~ main .writing {
+    color: red;
+    letter-spacing: 0.32em;
+}
+
+#writing:target ~ main .writing-section,
+#writing-amber:target ~ main .writing-section,
+#writing-oceans:target ~ main .writing-section,
+#writing-merlin:target ~ main .writing-section,
+#writing-office:target ~ main .writing-section {
+    display: block;
+}
+
+/* INDIVIDUAL WRITING TITLES ONLY */
+#writing-amber:target ~ main .amber,
+#writing-oceans:target ~ main .oceans,
+#writing-merlin:target ~ main .merlin,
+#writing-office:target ~ main .office-title {
+    color: red;
+    letter-spacing: 0.6em;
+}
+
+/* SHOW SPECIFIC TEXT */
+#writing-office:target ~ main .office-section,
+#writing-amber:target ~ main .amber-section,
+#writing-oceans:target ~ main .oceans-section {
+    display: block;
+}
+
+/* KEEP WRITING LIST VISIBLE WHEN A PIECE IS OPEN */
+#writing-amber:target ~ main .writing-section,
+#writing-office:target ~ main .writing-section,
+#writing-oceans:target ~ main .writing-section {
+    display: block;
+}
+
+/* ---------- FIXED SCROLL LOGO ---------- */
+.bottom-logo {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    width: 200px;
+    border: 1px solid black;
+    padding: 0.3rem;
+    cursor: pointer;
+}
