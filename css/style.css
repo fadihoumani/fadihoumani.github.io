@@ -149,14 +149,6 @@ html {
 .up    { position: relative; top: -1px; }
 .down  { position: relative; top: 2px; }
 
-/* optional: smooth transition on hover */
-.name span,
-.email span,
-.categories a span {
-    transition: letter-spacing 0.3s ease, top 0.3s ease;
-}
-
-
 
 /* ---------- FIXED SCROLL LOGO ---------- */
 .bottom-logo {
