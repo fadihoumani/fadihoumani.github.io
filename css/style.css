@@ -136,18 +136,18 @@ html {
 /* ---------- CHAOTIC KERNING FOR HEADER & CATEGORIES ---------- */
 
 /* spacing helpers */
-.space { display: inline-block; width: 0.6em; }
+.space { display: inline-block; width: 0.4em; }
 
 /* tracking variants */
-.t-tight   { letter-spacing: -0.08em; }
+.t-tight   { letter-spacing: -0.05em; }
 .t-normal  { letter-spacing: 0em; }
-.t-wide    { letter-spacing: 0.12em; }
-.t-wider   { letter-spacing: 0.22em; }
-.t-chaos   { letter-spacing: -0.15em; }
+.t-wide    { letter-spacing: 0.08em; }
+.t-wider   { letter-spacing: 0.12em; }
+.t-chaos   { letter-spacing: -0.10em; }
 
 /* micro vertical jitter */
-.up    { position: relative; top: -1px; }
-.down  { position: relative; top: 2px; }
+.up    { position: relative; top: -0.7px; }
+.down  { position: relative; top: 1px; }
 
 
 /* ---------- FIXED SCROLL LOGO ---------- */
