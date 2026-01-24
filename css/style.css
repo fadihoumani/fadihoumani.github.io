@@ -8,6 +8,7 @@
 body {
   font-family: 'Libre Baskerville', serif;
   line-height: 1.5;
+  color: #111;
 }
 
 /* header layout */
@@ -60,13 +61,23 @@ body {
 
 /* sections */
 .section {
-  padding: 100px 20px;
+  padding: 60px 20px;
+  font-size: 18px;      /* normal text size */
+  text-align: left;     /* normal alignment */
+  max-width: 800px;     /* optional for readability */
+  margin: 0 auto;
 }
 
-/* anchor offsets so writing text appears */
-#writing, #graphic, #writing-amber, #writing-oceans, #writing-merlin, #writing-office {
+/* writing anchors for scroll */
+#writing,
+#graphic,
+#writing-amber,
+#writing-oceans,
+#writing-merlin,
+#writing-office {
   display: block;
   height: 0;
-  margin-top: -100px; /* offset for sticky header scroll */
-  visibility: hidden; /* invisible anchor divs */
+  margin-top: -80px; /* offset for header */
+  overflow: hidden;  /* ensures empty div doesn't break layout */
+  pointer-events: none;
 }
