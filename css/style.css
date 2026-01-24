@@ -134,6 +134,40 @@ html {
     display: block;
 }
 
+/* Graphic Design Section */
+.graphic-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.graphic-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.graphic-item {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.graphic-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.graphic-info {
+  margin-top: 0.5rem;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+
 /* ---------- FIXED SCROLL LOGO ---------- */
 .bottom-logo {
     position: fixed;
