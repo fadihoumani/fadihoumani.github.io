@@ -22,9 +22,15 @@ html {
 }
 
 /* ---------- HEADER ---------- */
+.site-header {
+    position: relative;
+    padding: 80px 40px; /* left margin restored */
+}
+
 .name,
 .email {
     font-size: 20px;
+    text-transform: none; /* no caps */
 }
 
 .email {
@@ -51,7 +57,7 @@ html {
 .writing-titles {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* align left */
     gap: 28px;
 }
 
@@ -64,7 +70,7 @@ html {
 /* ---------- WRITING TEXT SECTIONS ---------- */
 .writing-text-section {
     max-width: 680px;
-    margin: 80px auto 120px auto;
+    margin: 80px 0 120px 40px; /* left margin */
     line-height: 1.6;
     font-size: 16px;
 }
