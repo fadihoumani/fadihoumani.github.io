@@ -133,21 +133,29 @@ html {
 #writing-oceans:target ~ main .oceans-section {
     display: block;
 }
+/* ---------- CHAOTIC KERNING FOR HEADER & CATEGORIES ---------- */
 
-/* ---------- RANDOM KERNING FOR HEADER & MAIN LINKS ---------- */
-.name,
-.email,
-.categories a {
-    letter-spacing: 0.1em; /* base spacing */
-    transition: letter-spacing 0.3s ease;
+/* spacing helpers */
+.space { display: inline-block; width: 0.6em; }
+
+/* tracking variants */
+.t-tight   { letter-spacing: -0.08em; }
+.t-normal  { letter-spacing: 0em; }
+.t-wide    { letter-spacing: 0.12em; }
+.t-wider   { letter-spacing: 0.22em; }
+.t-chaos   { letter-spacing: -0.15em; }
+
+/* micro vertical jitter */
+.up    { position: relative; top: -1px; }
+.down  { position: relative; top: 2px; }
+
+/* optional: smooth transition on hover */
+.name span,
+.email span,
+.categories a span {
+    transition: letter-spacing 0.3s ease, top 0.3s ease;
 }
 
-/* Optional: slight random variation on hover */
-.name:hover,
-.email:hover,
-.categories a:hover {
-    letter-spacing: 0.3em;
-}
 
 
 /* ---------- FIXED SCROLL LOGO ---------- */
