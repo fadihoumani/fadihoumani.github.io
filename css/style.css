@@ -1,83 +1,146 @@
-/* reset */
+/* ---------- RESET ---------- */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* ---------- BASE ---------- */
 body {
-  font-family: 'Libre Baskerville', serif;
-  line-height: 1.5;
-  color: #111;
+    font-family: 'Libre Baskerville', serif;
+    background: white;
+    color: black;
+    min-height: 100vh;
 }
 
-/* header layout */
-.site-header {
-  position: relative;
-  padding: 80px;
-  text-align: center;
+main {
+    padding: 40px;
 }
 
-/* text block for kerning letters */
-.text-block {
-  display: inline-block;
-  white-space: nowrap;
+html {
+    scroll-behavior: smooth;
 }
 
-/* typography */
+/* ---------- HEADER ---------- */
 .name,
-.role,
 .email {
-  font-size: 48px;
-  line-height: 1.15;
-  margin-bottom: 18px;
+    font-size: 20px;
 }
 
-/* spacing atoms */
-.space {
-  display: inline-block;
-  width: 0.6em;
+.email {
+    margin-bottom: 28px;
 }
 
-/* tracking / letter-spacing variants */
-.t-tight   { letter-spacing: -0.08em; }
-.t-normal  { letter-spacing: 0em; }
-.t-wide    { letter-spacing: 0.12em; }
-.t-wider   { letter-spacing: 0.22em; }
-.t-chaos   { letter-spacing: -0.15em; }
-
-/* micro vertical jitter */
-.up    { position: relative; top: -1px; }
-.down  { position: relative; top: 2px; }
-
-/* bottom logo */
-.bottom-logo {
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-  width: 120px;
-  border: 1.5px solid black;
+/* ---------- CATEGORIES ---------- */
+.categories a {
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 14px;
+    white-space: nowrap;
 }
 
-/* sections */
+/* ---------- SECTIONS (HIDDEN BY DEFAULT) ---------- */
 .section {
-  padding: 60px 20px;
-  font-size: 18px;      /* normal text size */
-  text-align: left;     /* normal alignment */
-  max-width: 800px;     /* optional for readability */
-  margin: 0 auto;
+    display: none;
+    margin-top: 64px;
 }
 
-/* writing anchors for scroll */
-#writing,
-#graphic,
-#writing-amber,
-#writing-oceans,
-#writing-merlin,
-#writing-office {
-  display: block;
-  height: 0;
-  margin-top: -80px; /* offset for header */
-  overflow: hidden;  /* ensures empty div doesn't break layout */
-  pointer-events: none;
+/* ---------- WRITING LIST ---------- */
+.writing-titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+.writing-titles a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+/* ---------- WRITING TEXT SECTIONS ---------- */
+.writing-text-section {
+    max-width: 680px;
+    margin: 80px auto 120px auto;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.writing-text-section p {
+    margin-bottom: 22px;
+}
+
+.writing-text-section .italic {
+    font-style: italic;
+}
+
+.writing-text-section .center {
+    text-align: center;
+}
+
+.writing-text-section .ellipsis {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+/* ---------- ACTIVE STATES ---------- */
+
+/* GRAPHIC */
+#graphic:target ~ main .graphic {
+    color: red;
+    letter-spacing: 0.32em;
+}
+
+#graphic:target ~ main .graphic-section {
+    display: block;
+}
+
+/* WRITING (PARENT) */
+#writing:target ~ main .writing,
+#writing-amber:target ~ main .writing,
+#writing-oceans:target ~ main .writing,
+#writing-merlin:target ~ main .writing,
+#writing-office:target ~ main .writing {
+    color: red;
+    letter-spacing: 0.32em;
+}
+
+#writing:target ~ main .writing-section,
+#writing-amber:target ~ main .writing-section,
+#writing-oceans:target ~ main .writing-section,
+#writing-merlin:target ~ main .writing-section,
+#writing-office:target ~ main .writing-section {
+    display: block;
+}
+
+/* INDIVIDUAL WRITING TITLES */
+#writing-amber:target ~ main .amber,
+#writing-oceans:target ~ main .oceans,
+#writing-merlin:target ~ main .merlin,
+#writing-office:target ~ main .office-title {
+    color: red;
+    letter-spacing: 0.6em;
+}
+
+/* SHOW TEXT SECTIONS */
+#writing-office:target ~ main .office-section,
+#writing-amber:target ~ main .amber-section,
+#writing-oceans:target ~ main .oceans-section {
+    display: block;
+}
+
+/* ---------- FIXED SCROLL LOGO ---------- */
+.bottom-logo {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    width: 200px;
+    border: 1px solid black;
+    padding: 0.3rem;
+    cursor: pointer;
 }
