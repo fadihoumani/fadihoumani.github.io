@@ -61,7 +61,7 @@ html {
     font-size: 18px;
 }
 
-/* ---------- WRITING TEXT SECTIONS (CENTERED) ---------- */
+/* ---------- WRITING TEXT SECTIONS ---------- */
 .writing-text-section {
     max-width: 680px;
     margin: 80px auto 120px auto;
@@ -81,11 +81,10 @@ html {
     text-align: center;
 }
 
-.ellipsis {
+.writing-text-section .ellipsis {
     display: block;
     text-align: center;
     font-size: 1.2rem;
-    font-style: normal;
     margin: 1.5rem 0;
 }
 
@@ -119,7 +118,7 @@ html {
     display: block;
 }
 
-/* INDIVIDUAL WRITING TITLES ONLY */
+/* INDIVIDUAL WRITING TITLES */
 #writing-amber:target ~ main .amber,
 #writing-oceans:target ~ main .oceans,
 #writing-merlin:target ~ main .merlin,
@@ -128,17 +127,10 @@ html {
     letter-spacing: 0.6em;
 }
 
-/* SHOW SPECIFIC TEXT */
+/* SHOW TEXT SECTIONS */
 #writing-office:target ~ main .office-section,
 #writing-amber:target ~ main .amber-section,
 #writing-oceans:target ~ main .oceans-section {
-    display: block;
-}
-
-/* KEEP WRITING LIST VISIBLE WHEN A PIECE IS OPEN */
-#writing-amber:target ~ main .writing-section,
-#writing-office:target ~ main .writing-section,
-#writing-oceans:target ~ main .writing-section {
     display: block;
 }
 
