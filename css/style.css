@@ -1,73 +1,11 @@
-/* -------------------------
-   ORIGINAL CSS – DO NOT TOUCH
-   ------------------------- */
-
-/* Reset body and basic font */
-body {
-    margin: 0;
-    font-family: sans-serif;
-    line-height: 1.5;
-    color: #111;
-}
-
-/* Header takes full screen */
-.site-header {
-    position: relative;
-    font-family: 'Libre Baskerville', serif;
-    text-transform: none;
-    width: 100vw;
-    height: 100vh;
-    padding: 1rem;
-    box-sizing: border-box;
-}
-
-/* Text block near top-left */
-.text-block {
-    position: absolute;
-    left: 1rem;
-    top: 1rem;
-    white-space: nowrap;
-}
-
-.name {
-    font-size: 1.4em;
-    letter-spacing: 0.28em;
-    font-weight: bold;
-}
-
-.role {
-    font-size: 0.9em;
-    letter-spacing: 0.09em;
-    margin-top: 0.1em;
-}
-
-.email {
-    font-size: 0.9em;
-    letter-spacing: 0.18em;
-    margin-top: 0.1em;
-}
-
-/* micro-kerning classes */
-.t-tight  { margin-right: -0.04em; }
-.t-normal { margin-right: 0em; }
-.t-wide   { margin-right: 0.08em; }
-.t-wider  { margin-right: 0.14em; }
-
-.space {
-    display: inline-block;
-    width: 0.4em;
-}
-
-/* -------------------------
-   GLOBAL LAYOUT
-   ------------------------- */
-
+/* ---------- RESET ---------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ---------- BASE ---------- */
 body {
     font-family: 'Libre Baskerville', serif;
     background: white;
@@ -79,6 +17,7 @@ main {
     padding: 40px;
 }
 
+/* ---------- HEADER ---------- */
 .name,
 .email {
     font-size: 20px;
@@ -88,10 +27,7 @@ main {
     margin-bottom: 28px;
 }
 
-/* -------------------------
-   CATEGORIES
-   ------------------------- */
-
+/* ---------- CATEGORIES ---------- */
 .categories a {
     display: block;
     font-size: 20px;
@@ -101,15 +37,13 @@ main {
     white-space: nowrap;
 }
 
+/* ---------- SECTIONS ---------- */
 .section {
     display: none;
     margin-top: 64px;
 }
 
-/* -------------------------
-   WRITING TITLES
-   ------------------------- */
-
+/* ---------- WRITING LIST ---------- */
 .writing-titles {
     display: flex;
     flex-direction: column;
@@ -123,16 +57,12 @@ main {
     font-size: 18px;
 }
 
-/* -------------------------
-   OFFICE TEXT LAYOUT
-   ------------------------- */
-
+/* ---------- OFFICE TEXT ---------- */
 .office-section {
     max-width: 640px;
     margin: 80px auto 120px auto;
     line-height: 1.55;
     font-size: 16px;
-    color: black;
 }
 
 .office-section p {
@@ -148,9 +78,7 @@ main {
     font-style: italic;
 }
 
-/* -------------------------
-   ACTIVE STATES
-   ------------------------- */
+/* ---------- ACTIVE STATES ---------- */
 
 /* GRAPHIC */
 #graphic:target ~ main .graphic {
@@ -162,7 +90,7 @@ main {
     display: block;
 }
 
-/* WRITING PARENT */
+/* WRITING (parent) */
 #writing:target ~ main .writing,
 #writing-amber:target ~ main .writing,
 #writing-oceans:target ~ main .writing,
@@ -180,28 +108,31 @@ main {
     display: block;
 }
 
-/* INDIVIDUAL WRITING PIECES (titles only) */
+/* INDIVIDUAL WRITING TITLES ONLY */
 #writing-amber:target ~ main .amber,
 #writing-oceans:target ~ main .oceans,
 #writing-merlin:target ~ main .merlin,
-#writing-office:target ~ main .office {
+#writing-office:target ~ main .office-title {
     color: red;
     letter-spacing: 0.6em;
 }
 
-/* SHOW OFFICE SECTION */
+/* SHOW OFFICE TEXT */
 #writing-office:target ~ main .office-section {
     display: block;
-    color: black; /* stays black */
 }
 
-/* -------------------------
-   FIXED SCROLL LOGO
-   ------------------------- */
-
+/* ---------- SCROLL LOGO ---------- */
 .bottom-logo {
     position: fixed;
     bottom: 40px;
     left: 40px;
     width: 200px;
-    heigh
+    border: 1px solid black;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+
+html {
+    scroll-behavior: smooth;
+}
