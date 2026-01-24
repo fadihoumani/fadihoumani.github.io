@@ -1,162 +1,89 @@
-/* ---------- RESET ---------- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fadi Houmani</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
 
-/* ---------- BASE ---------- */
-body {
-    font-family: 'Libre Baskerville', serif;
-    background: white;
-    color: black;
-    min-height: 100vh;
-}
+<body>
 
-main {
-    padding: 40px;
-}
+<!-- STATE ANCHORS -->
+<div id="graphic"></div>
+<div id="writing"></div>
+<div id="writing-amber"></div>
+<div id="writing-oceans"></div>
+<div id="writing-merlin"></div>
+<div id="writing-office"></div>
 
-html {
-    scroll-behavior: smooth;
-}
+<header class="site-header">
 
-/* ---------- HEADER ---------- */
-.name,
-.email {
-    font-size: 20px;
-}
+  <div class="text-block">
 
-.email {
-    margin-bottom: 28px;
-}
+    <div class="name">
+      <span class="t-chaos">f</span><span class="t-tight up">a</span><span class="t-wide">d</span><span class="t-normal">i</span>
+      <span class="space"></span>
+      <span class="t-wide">h</span><span class="t-normal down">o</span><span class="t-wider">u</span><span class="t-chaos">m</span><span class="t-tight">a</span><span class="t-normal">n</span><span class="t-tight up">i</span>
+    </div>
 
-/* ---------- CATEGORIES ---------- */
-.categories a {
-    display: block;
-    font-size: 20px;
-    text-decoration: none;
-    color: black;
-    margin-bottom: 14px;
-    white-space: nowrap;
-}
+    <div class="role">
+      <span class="t-tight">g</span><span class="t-wide up">r</span><span class="t-normal">a</span><span class="t-chaos">p</span><span class="t-wider">h</span><span class="t-tight">i</span><span class="t-wide down">c</span>
+      <span class="space"></span>
+      <span class="t-normal">d</span><span class="t-chaos">e</span><span class="t-wider up">s</span><span class="t-tight">i</span><span class="t-wide">g</span><span class="t-normal down">n</span>
+      <span class="space"></span>
+      <span class="t-tight">a</span><span class="t-wider up">n</span><span class="t-chaos">d</span>
+      <span class="space"></span>
+      <span class="t-wide">w</span><span class="t-chaos">r</span><span class="t-wider up">i</span><span class="t-tight">t</span><span class="t-normal down">i</span><span class="t-wide">n</span><span class="t-tight">g</span>
+    </div>
 
-/* ---------- SECTIONS (HIDDEN BY DEFAULT) ---------- */
-.section {
-    display: none;
-    margin-top: 64px;
-}
+    <div class="email">
+      <span class="t-tight">h</span><span class="t-wide">o</span><span class="t-chaos">u</span><span class="t-normal">m</span><span class="t-wider up">a</span><span class="t-tight">n</span><span class="t-wide">i</span>
+      <span class="t-chaos">f</span><span class="t-normal">a</span><span class="t-wide">d</span><span class="t-tight">i</span>
+      <span class="t-wider">@</span>
+      <span class="t-tight">g</span><span class="t-wide">m</span><span class="t-chaos">a</span><span class="t-normal">i</span><span class="t-wide">l</span>
+      <span class="t-tight">.</span>
+      <span class="t-normal">c</span><span class="t-chaos">o</span><span class="t-wide">m</span>
+    </div>
 
-/* ---------- WRITING LIST ---------- */
-.writing-titles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 28px;
-}
+  </div>
 
-.writing-titles a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-}
+  <img src="ass_logo.jpg" alt="logo" class="bottom-logo">
 
-/* ---------- WRITING TEXT SECTIONS ---------- */
-.writing-text-section {
-    max-width: 680px;
-    margin: 80px auto 120px auto;
-    line-height: 1.6;
-    font-size: 16px;
-}
+</header>
 
-.writing-text-section p {
-    margin-bottom: 22px;
-}
+<main>
+    <nav class="categories">
+        <a href="#graphic" class="graphic">graphic design</a>
+        <a href="#writing" class="writing">writing</a>
+    </nav>
 
-.writing-text-section .italic {
-    font-style: italic;
-}
+    <!-- GRAPHIC -->
+    <section class="section graphic-section"></section>
 
-.writing-text-section .center {
-    text-align: center;
-}
+    <!-- WRITING LIST -->
+    <section class="section writing-section">
+        <div class="writing-titles">
+            <a href="#writing-amber" class="piece amber">tales of amber</a>
+            <a href="#writing-oceans" class="piece oceans">all oceans break loose</a>
+            <a href="#writing-merlin" class="piece merlin">merlin</a>
+            <a href="#writing-office" class="piece office-title">at the office (ennui)</a>
+        </div>
+    </section>
 
-.writing-text-section .ellipsis {
-    display: block;
-    text-align: center;
-    font-size: 1.2rem;
-    margin: 1.5rem 0;
-}
+    <!-- TEXT SECTIONS -->
+    <section class="section writing-text-section office-section">
+        <!-- your office text here -->
+    </section>
 
-/* ---------- ACTIVE STATES ---------- */
+    <section class="section writing-text-section amber-section">
+        <!-- your amber text here -->
+    </section>
 
-/* GRAPHIC */
-#graphic:target ~ main .graphic {
-    color: red;
-    letter-spacing: 0.32em;
-}
+    <section class="section writing-text-section oceans-section">
+        <!-- your oceans text here -->
+    </section>
+</main>
 
-#graphic:target ~ main .graphic-section {
-    display: block;
-}
-
-/* WRITING (PARENT) */
-#writing:target ~ main .writing,
-#writing-amber:target ~ main .writing,
-#writing-oceans:target ~ main .writing,
-#writing-merlin:target ~ main .writing,
-#writing-office:target ~ main .writing {
-    color: red;
-    letter-spacing: 0.32em;
-}
-
-#writing:target ~ main .writing-section,
-#writing-amber:target ~ main .writing-section,
-#writing-oceans:target ~ main .writing-section,
-#writing-merlin:target ~ main .writing-section,
-#writing-office:target ~ main .writing-section {
-    display: block;
-}
-
-/* INDIVIDUAL WRITING TITLES */
-#writing-amber:target ~ main .amber,
-#writing-oceans:target ~ main .oceans,
-#writing-merlin:target ~ main .merlin,
-#writing-office:target ~ main .office-title {
-    color: red;
-    letter-spacing: 0.6em;
-}
-
-/* SHOW TEXT SECTIONS */
-#writing-office:target ~ main .office-section,
-#writing-amber:target ~ main .amber-section,
-#writing-oceans:target ~ main .oceans-section {
-    display: block;
-}
-/* ---------- CHAOTIC KERNING FOR HEADER & CATEGORIES ---------- */
-
-/* spacing helpers */
-.space { display: inline-block; width: 0.4em; }
-
-/* tracking variants */
-.t-tight   { letter-spacing: -0.05em; }
-.t-normal  { letter-spacing: 0em; }
-.t-wide    { letter-spacing: 0.08em; }
-.t-wider   { letter-spacing: 0.12em; }
-.t-chaos   { letter-spacing: -0.10em; }
-
-/* micro vertical jitter */
-.up    { position: relative; top: -0.7px; }
-.down  { position: relative; top: 1px; }
-
-
-/* ---------- FIXED SCROLL LOGO ---------- */
-.bottom-logo {
-    position: fixed;
-    bottom: 40px;
-    left: 40px;
-    width: 200px;
-    border: 1px solid black;
-    padding: 0.3rem;
-    cursor: pointer;
-}
+</body>
+</html>
