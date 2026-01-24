@@ -164,6 +164,21 @@ html {
     font-style: normal;
     margin: 1.5rem 0;
 }
+/* SHOW OCEANS TEXT */
+#writing-oceans:target ~ main .oceans-section {
+    display: block;
+}
+
+/* KEEP WRITING LIST VISIBLE WHEN OCEANS IS OPEN */
+#writing-oceans:target ~ main .writing-section {
+    display: block;
+}
+
+/* HIGHLIGHT OCEANS TITLE */
+#writing-oceans:target ~ main .oceans {
+    color: red;
+    letter-spacing: 0.6em;
+}
 
 
 /* ---------- FIXED SCROLL LOGO ---------- */
