@@ -17,6 +17,10 @@ main {
     padding: 40px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* ---------- HEADER ---------- */
 .name,
 .email {
@@ -37,7 +41,7 @@ main {
     white-space: nowrap;
 }
 
-/* ---------- SECTIONS ---------- */
+/* ---------- SECTIONS (HIDDEN BY DEFAULT) ---------- */
 .section {
     display: none;
     margin-top: 64px;
@@ -78,6 +82,26 @@ main {
     font-style: italic;
 }
 
+/* ---------- AMBER TEXT ---------- */
+.amber-section {
+    max-width: 680px;
+    margin: 80px auto 120px auto;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.amber-section p {
+    margin-bottom: 22px;
+}
+
+.amber-section .italic {
+    font-style: italic;
+}
+
+.amber-section .center {
+    text-align: center;
+}
+
 /* ---------- ACTIVE STATES ---------- */
 
 /* GRAPHIC */
@@ -90,7 +114,7 @@ main {
     display: block;
 }
 
-/* WRITING (parent) */
+/* WRITING (PARENT) */
 #writing:target ~ main .writing,
 #writing-amber:target ~ main .writing,
 #writing-oceans:target ~ main .writing,
@@ -122,7 +146,12 @@ main {
     display: block;
 }
 
-/* ---------- SCROLL LOGO ---------- */
+/* SHOW AMBER TEXT */
+#writing-amber:target ~ main .amber-section {
+    display: block;
+}
+
+/* ---------- FIXED SCROLL LOGO ---------- */
 .bottom-logo {
     position: fixed;
     bottom: 40px;
@@ -131,8 +160,4 @@ main {
     border: 1px solid black;
     padding: 0.3rem;
     cursor: pointer;
-}
-
-html {
-    scroll-behavior: smooth;
 }
