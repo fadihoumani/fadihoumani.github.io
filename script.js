@@ -10,34 +10,38 @@ const images = [
   "images/project9.jpg",
   "images/project10.jpg",
   "images/project11.jpg",
-    "images/project12.jpg",
-    "images/project13.jpg",
-    "images/project14.jpg",
-    "images/project15.jpg"
+  "images/project12.jpg",
+  "images/project13.jpg",
+  "images/project14.jpg",
+  "images/project15.jpg"
 ];
 
 let currentIndex = 0;
 
 const carousel = document.getElementById("graphicCarousel");
 
-// Create the image element dynamically
+// create image
 const img = document.createElement("img");
-img.src = images[currentIndex];   // start with the first image
+img.src = images[currentIndex];
 img.alt = `Project ${currentIndex + 1}`;
-img.style.cursor = "pointer";     // optional, to show it's clickable
-carousel.prepend(img);            // add it inside the carousel before the info paragraph
+img.style.cursor = "pointer";
+carousel.prepend(img);
 
-// Click event to cycle images
+// orientation check
+function updateOrientation() {
+  img.classList.remove("horizontal");
+  if (img.naturalWidth > img.naturalHeight) {
+    img.classList.add("horizontal");
+  }
+}
+
+// run once for first image
+img.onload = updateOrientation;
+
+// click to change image
 carousel.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % images.length;
   img.src = images[currentIndex];
   img.alt = `Project ${currentIndex + 1}`;
-
-   img.onload = () => {
-    img.classList.remove("horizontal");
-    if (img.naturalWidth > img.naturalHeight) {
-      img.classList.add("horizontal");
-    }
-  };
-});
+  img.onload = updateOrientation;
 });
