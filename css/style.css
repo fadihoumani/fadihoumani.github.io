@@ -135,12 +135,13 @@ html {
 }
 
 /* Graphic Design Section */
-/* ---------- GRAPHIC CAROUSEL ---------- */
 .graphic-section {
   max-width: 500px;
   margin: 0 auto 4rem auto;
   text-align: center;
+  margin-top: 0 !important;
 }
+
 
 .carousel {
   position: relative;
@@ -149,9 +150,11 @@ html {
 
 .carousel img {
   width: 100%;
-  border-radius: 4px;
   display: block;
+  border: 1px solid black;
+  padding: 0.3rem;   /* same visual breathing as bottom logo */
 }
+
 
 .carousel-info {
   margin-top: 0.5rem;
