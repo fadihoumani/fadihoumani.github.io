@@ -151,8 +151,15 @@ html {
 
 .carousel img {
   width: 100%;
-  display: block;
+  max-height: 75vh;        /* or e.g. 600px */
   border: 1px solid black;
+  object-fit: contain;    /* keeps full image */
+  display: block;
+}
+
+.carousel img.horizontal {
+  height: 75vh;           /* enlarges horizontals */
+  object-fit: contain;
   
 }
 
