@@ -32,4 +32,12 @@ carousel.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % images.length;
   img.src = images[currentIndex];
   img.alt = `Project ${currentIndex + 1}`;
+
+   img.onload = () => {
+    img.classList.remove("horizontal");
+    if (img.naturalWidth > img.naturalHeight) {
+      img.classList.add("horizontal");
+    }
+  };
+});
 });
