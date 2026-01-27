@@ -136,7 +136,7 @@ html {
 
 /* Graphic Design Section */
 .graphic-section {
-  max-width: 500px;
+  max-width: none;
   margin: 0 auto 4rem auto;
   text-align: center;
   position: relative;
