@@ -164,7 +164,7 @@ html {
 }
 
 .carousel::after {
-  content: '→ Click image to see next';
+  content: ;
   display: block;
   margin-top: 0.3rem;
   font-size: 0.8rem;
