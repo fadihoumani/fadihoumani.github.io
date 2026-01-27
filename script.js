@@ -8,16 +8,24 @@ const images = [
   "images/project7.jpg",
   "images/project8.jpg",
   "images/project9.jpg",
-   "images/project10.jpg",
-   "images/project11.jpg"
+  "images/project10.jpg",
+  "images/project11.jpg"
 ];
 
 let currentIndex = 0;
 
 const carousel = document.getElementById("graphicCarousel");
-const img = carousel.querySelector("img");
 
+// Create the image element dynamically
+const img = document.createElement("img");
+img.src = images[currentIndex];   // start with the first image
+img.alt = `Project ${currentIndex + 1}`;
+img.style.cursor = "pointer";     // optional, to show it's clickable
+carousel.prepend(img);            // add it inside the carousel before the info paragraph
+
+// Click event to cycle images
 carousel.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % images.length;
   img.src = images[currentIndex];
+  img.alt = `Project ${currentIndex + 1}`;
 });
