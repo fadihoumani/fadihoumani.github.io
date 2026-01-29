@@ -39,7 +39,7 @@ function updateOrientation() {
 img.onload = updateOrientation;
 
 // click to change image
-carousel.addEventListener("click", () => {
+img.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % images.length;
   img.src = images[currentIndex];
   img.alt = `Project ${currentIndex + 1}`;
