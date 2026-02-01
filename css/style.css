@@ -161,7 +161,7 @@ html {
 
 
 .carousel img.horizontal {
-  height: 65vh;           /* enlarges horizontals */
+  height: 55vh;           /* enlarges horizontals */
   object-fit: contain;
   
 }
