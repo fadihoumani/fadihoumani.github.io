@@ -193,3 +193,17 @@ html {
     padding: 0.3rem;
     cursor: pointer;
 }
+/* ---- CLICK FIX (ADD AT VERY END) ---- */
+.carousel {
+  pointer-events: none;
+}
+
+.carousel img {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+nav.categories {
+  position: relative;
+  z-index: 10;
+}
